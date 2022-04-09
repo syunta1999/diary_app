@@ -1,0 +1,27 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Signup" %}{% endblock %}
+
+{% block content %}
+<h1 class="w-100 text-center" >{% trans "Sign Up" %}</h1>
+<br>
+<div class="w-50 content-center m-auto" >
+  <p>既にアカウントをお持ちの方はログインしてください。</p>
+</div>
+<div class="w-50 content-center m-auto" >
+
+  <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+    {% csrf_token %}
+    <div class="form-group col">
+      {{ form.as_p }}
+    </div>
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% endif %}
+    <button class="col w-50 btn btn-outline-dark w-auto" type="submit">{% trans "Sign Up" %} &raquo;</button>
+  </form>
+  <br>
+</div>
+{% endblock %}

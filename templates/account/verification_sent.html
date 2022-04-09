@@ -1,0 +1,12 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Verify Your E-mail Address" %}{% endblock %}
+
+{% block content %}
+    <h1>{% trans "Verify Your E-mail Address" %}</h1>
+
+    <p>{% blocktrans %}確認のためのメールを送信しています。記載されているリンクに従って、サインアップを完了してください。メインの受信トレイに確認メールが表示されない場合は、迷惑メールフォルダを確認してください。数分以内に確認メールが届かない場合は、弊社までご連絡ください。{% endblocktrans %}</p>
+
+{% endblock %}

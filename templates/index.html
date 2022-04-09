@@ -1,0 +1,19 @@
+{% extends "base.html"%}
+{% block content %}
+<h1 class="w-100 text-center m-auto" >メモ帳</h1>
+<br>
+<div class="w-25 content-center m-auto" ><br>
+    <div class="row">
+        <a class="col w-auto btn btn-outline-dark" href="{% url 'diary:diary_create' %}" >作成</a>
+        <a class="col w-auto btn btn-outline-dark offset-2" href="{% url 'diary:diary_list' %}" >一覧</a>
+    </div>
+    <br>
+    <div class="row">
+        <a class="col w-25 btn btn-outline-dark" href="{% url 'account_logout' %}">ログアウト</a> 
+    </div>
+    <br>
+    <br>
+    <br>
+    <h4 class="w-100 text-center m-auto" >毎日の予定を記録しよう！！</h4>
+</div>
+{% endblock %}

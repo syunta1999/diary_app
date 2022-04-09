@@ -1,0 +1,24 @@
+{% extends "base.html"%}
+{% block content %}
+<h1 class="w-100 text-center" >日記の編集</h1>
+<br>
+<div class="w-50 content-center m-auto" >
+    <form method="post">
+        <div class="row">
+            {% csrf_token %}
+            <label>日付</label>
+            <div>{{ form.title }}</div>
+            <label>タイトル</label>
+            <div >{{ form.date }}</div>
+            <label>テキスト</label>
+            <div>{{ form.text }}</div>
+        </div>
+        <br>
+        <div class="row">
+            <a class="col w-auto btn btn-outline-dark" href="{% url 'diary:diary_list' %}" >一覧</a>
+            <input class="col offset-2 w-50 btn btn-outline-dark w-auto" type="submit" value="保存">
+        </div>
+    </form>
+    
+</div>
+{% endblock%}

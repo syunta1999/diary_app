@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<h1  class="w-100 text-center"  >日記の作成</h1>
+<div class="w-50 content-center m-auto" >
+    <form method="post">
+        {% csrf_token %}
+        <div class="row">
+            <div class="form-group col-6 ">
+                <label>{{ form.title.label }}</label>
+                {{ form.title | add_class:'form-control w-auto' }}
+            </div>
+            <div class="form-group col-6 ">
+                <label>{{ form.date.label }}</label>
+                {{ form.date | add_class:'form-control w-auto' }}
+            </div>
+            <div class="form-group col ">
+                <label>{{ form.text.label }}</label>
+                {{ form.text | add_class:'form-control w-100' }}
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <a class="col w-auto btn btn-outline-dark" href="{% url 'diary:diary_list' %}" >戻る</a>
+            <button type="submit" class="col offset-2 w-50 btn btn-outline-dark w-auto">投稿</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

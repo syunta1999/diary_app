@@ -1,0 +1,21 @@
+{% extends "base.html"%}
+{% block content %}
+<h1 class="w-100 text-center" >日記の削除</h1>
+<div class="w-50 content-center m-auto" >
+    <form method="post">
+        {% csrf_token %}
+        <label>日付</label>
+        <p class="form-control w-25" >{{ diary.date }}</p>
+        <label>タイトル</label>
+        <p class="form-control w-75 " >{{ diary.title }}</p>
+        <label>テキスト</label>
+        <textarea class="form-control">{{ diary.text }}</textarea>
+        <p>作成日：{{ diary.created_at }}</p>
+        <br>
+        <div class="row">
+            <a class="col w-auto btn btn-outline-dark" href="{% url 'diary:diary_list' %}" >一覧</a>
+            <input class="col offset-2 w-50 btn btn-outline-dark w-auto" type="submit" value="削除">
+        </div>
+    </form>
+</div>
+{% endblock %}
